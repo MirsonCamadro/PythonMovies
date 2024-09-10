@@ -54,9 +54,14 @@ def filtrar_y_ordenar(genero_pelicula):
     lineas_archivo = leer_archivo()
     _, peliculas_por_genero, info_peliculas = cargar_datos(lineas_archivo)
 
-    peliculas_filtradas = [
-            pelicula[0] for pelicula in info_peliculas if genero_pelicula in pelicula[4]
-        ]
+    peliculas_filtradas = []
+    for pelicula in info_peliculas:
+        if genero_pelicula in pelicula[4]:
+            peliculas_filtradas.append(pelicula[0])
+    
+    # peliculas_filtradas = [
+    #         pelicula[0] for pelicula in info_peliculas if genero_pelicula in pelicula[4]
+    # ]
     
     peliculas_filtradas.sort(reverse=True)
 
