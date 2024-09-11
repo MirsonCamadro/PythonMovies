@@ -14,12 +14,12 @@ def cargar_datos(lineas_archivo):
                 generos_peliculas.append(genero)
 
             genero_encontrado = False
-            for i, (gen, peliculas) in enumerate(peliculas_por_genero):
+            for gen, peliculas in peliculas_por_genero:
                 if gen == genero:
-                    peliculas.append(titulo)  
+                    peliculas.append(titulo)
                     genero_encontrado = True
                     break
-            
+
             if not genero_encontrado:
                 peliculas_por_genero.append((genero, [titulo]))
 
